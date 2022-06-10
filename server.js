@@ -104,7 +104,7 @@ app.get('/api/:alienName', (request, response) => {
 
 // Where to initialise our server, which port or let Heroku pick if not available.
 app.listen(process.env.PORT || PORT, () => {
-    console.log('Server is running.')
+    console.log(`The server is running on ${PORT}! You better go catch it!`)
 })
 
 
