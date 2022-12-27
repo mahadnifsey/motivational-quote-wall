@@ -63,7 +63,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     // Delete - Find and Delete item in database
     app.delete('/quotes', (req, res) => {
       quotesCollection.deleteOne(
-        { name: req.body.name } // We already passed the name 'Darth Vader' from Fetch method in main.js we can instead use req.body.name instead
+        { name: req.body.name } // We already passed the name 'Dan Lok' from Fetch method in main.js we can instead use req.body.name instead
       )
         .then(result => {
           if (result.deletedCount === 0) {
