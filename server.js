@@ -3,13 +3,22 @@ const bodyParser= require('body-parser');
 const { query } = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient
-const connectionString = 'mongodb+srv://mahadnifsey:aYkisiYmaJSfj7Ox@cluster0.sepj1ni.mongodb.net/?retryWrites=true&w=majority'
+
+
+// Updated to remove key - fix this
+let db,
+    connectionString = process.env.DB_STRING,
+    dbName = 'star-wars-quotes'
 
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
-    const db = client.db('star-wars-quotes')
+    db = client.db(dbName)
     const quotesCollection = db.collection('quotes')
+
+
+
+    
 
     // MiddleWare
     //============
@@ -74,7 +83,11 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         .catch(error => console.error(error))
     })
 
-    app.listen(3000, function() {
-      console.log('listening on 3000')
+    // app.listen(3000, function() {
+    //   console.log('listening on 3000')
+    // });
+    //Server Running
+    app.listen(process.env.PORT, () => {
+      console.log("Server is running, you better catch it!");
     });
   })
