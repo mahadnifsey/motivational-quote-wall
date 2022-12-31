@@ -1,11 +1,10 @@
 const express = require('express');
 const bodyParser= require('body-parser');
-const { query } = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient
+require('dotenv').config()
 
-
-// Updated to remove key - fix this
+// Updated to remove key - fix this`
 let db,
     connectionString = process.env.DB_STRING,
     dbName = 'star-wars-quotes'
@@ -16,9 +15,6 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     db = client.db(dbName)
     const quotesCollection = db.collection('quotes')
 
-
-
-    
 
     // MiddleWare
     //============
