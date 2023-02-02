@@ -18,7 +18,7 @@ update.addEventListener('click', _ => {
         headers: { 'Content-Type': 'application/json'},
         // Convert the date into JSON using stringify
         body: JSON.stringify({
-            name: 'Eric Thomas',
+            name: 'Dr.Eric Thomas',
             quote: `"Done is better than perfect if perfect ain't done."`
         })
     })

@@ -17,7 +17,8 @@ body {
   grid-template-areas:
     "header header header"
     "add-quotes update-quote delete-quote"
-    "quotes quotes quotes";
+    "quotes quotes quotes"
+    "footer footer footer";
   gap: 1rem;
   margin: 0;
   padding: 1rem;
@@ -29,6 +30,7 @@ body {
 
 [data-position="header"] {
   grid-area: header;
+  text-align: center;
 }
 
 [data-position="add-quotes"] {
@@ -49,6 +51,12 @@ body {
   border-radius: 0.5rem;
 }
 
+[data-position="footer"] {
+  grid-area: footer;
+  /* overflow: scroll; */
+  border-radius: 0.5rem;
+}
+
 [data-position] {
   background-color: white;
   border-radius: 0.5rem;
@@ -57,7 +65,22 @@ body {
 }
 
 h1,
-h2 {
+h2,
+p {
   margin: 0;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  border: 1px solid red;
+}
+  #footerRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    #footerRight a {
+      width: 10%;
+      padding: 0;
+    }
